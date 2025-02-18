@@ -24,22 +24,25 @@ SELECT * FROM country_dim ;
 CREATE TABLE IF NOT EXISTS economics_happiness_fact (
 	id SERIAL PRIMARY KEY,
 	country_id INT REFERENCES country_dim(country_id),
-	life_ladder FLOAT CHECK (life_ladder BETWEEN 0 AND 10),
-	social_support FLOAT CHECK (social_support BETWEEN 0 AND 1),
-	healthy_life_exp FLOAT CHECK (healthy_life_exp >0),
-	freedom_to_make_life_choices FLOAT CHECK (freedom_to_make_life_choices BETWEEN 0 AND 1),
-	perceptions_of_corruption FLOAT CHECK (perceptions_of_corruption BETWEEN 0 AND 1),
-	positive_affect FLOAT CHECK (positive_affect BETWEEN 0 AND 1),
-	negative_affect FLOAT CHECK (negative_affect BETWEEN 0 AND 1),
-	cc_estimate FLOAT,
-	cc_rank FLOAT,
-	cc_rank_upper FLOAT,
-	cc_rank_lower FLOAT,
-	s_and_p_global_equity_indices FLOAT,
-	dept_per_gdp FLOAT,
-	log_gdp_capita FLOAT,
-	year_id INT REFERENCES year_dim(year_id)
+	year_id INT REFERENCES year_dim(year_id),
+	dept_per_gdp TEXT,
+	life_ladder TEXT,
+	log_gdp_capita TEXT,
+	social_support TEXT,
+	healthy_life_exp TEXT,
+	freedom_to_make_life_choices TEXT,
+	perceptions_of_corruption TEXT,
+	positive_affect TEXT,
+	negative_affect TEXT,
+	cc_estimate TEXT,
+	cc_rank TEXT,
+	cc_rank_lower TEXT,
+	cc_rank_upper TEXT,
+	s_and_p_global_equity_indices TEXT	
+	
 );
+
+SELECT * FROM economics_happiness_fact;
  /*
 INSERT INTO economics_happiness_fact (country_id, life_ladder, social_support, healthy_life_exp, freedom_to_make_life_choices, perceptions_of_corruption, 
 positive_affect, negative_affect, cc_estimate, cc_rank, cc_rank_upper, cc_rank_lower, s_and_p_global_equity_indices, gdp, dept_per_gdp,
