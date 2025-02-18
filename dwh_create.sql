@@ -18,6 +18,8 @@ CREATE TABLE IF NOT EXISTS country_dim(
 	country_code CHAR(3)
 );
 
+SELECT * FROM country_dim ;
+
 
 CREATE TABLE IF NOT EXISTS economics_happiness_fact (
 	id SERIAL PRIMARY KEY,
@@ -34,7 +36,6 @@ CREATE TABLE IF NOT EXISTS economics_happiness_fact (
 	cc_rank_upper FLOAT,
 	cc_rank_lower FLOAT,
 	s_and_p_global_equity_indices FLOAT,
-	gdp FLOAT,
 	dept_per_gdp FLOAT,
 	log_gdp_capita FLOAT,
 	year_id INT REFERENCES year_dim(year_id)
