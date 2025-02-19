@@ -38,7 +38,10 @@ CREATE TABLE IF NOT EXISTS economics_happiness_fact (
 	cc_rank TEXT,
 	cc_rank_lower TEXT,
 	cc_rank_upper TEXT,
-	s_and_p_global_equity_indices TEXT	
+	s_and_p_global_equity_indices TEXT,
+	political_stability_and_absence_of_violence_estimate TEXT,
+	political_stability_and_absence_of_violence_rank TEXT,
+	gini_index TEXT
 	
 );
 
